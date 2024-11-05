@@ -45,11 +45,14 @@ tube_length <- data.frame(matrix(c("A", 31, "B", 20, "C", 5, "D", 3, "E", 7, "F"
 colnames(tube_length) <- c("species", "tube_length")
 
 # Next we'll convert the tube length values to a pairwise distance matrix with column and row names representing the flower species.
-tube_length_dist <- as.matrix(dist(tube_length$V2))
+tube_length_dist <- as.matrix(dist(tube_length$tube_length))
 # Add rownames and colnames
 rownames(tube_length_dist) <- tube_length$species
 colnames(tube_length_dist) <- tube_length$species
 
 # Add prepared data to package
-usethis::use_data(pollinator_visits, size_dist, color_dist, tube_length_dist)
+usethis::use_data(pollinator_visits)
+usethis::use_data(color_dist)
+usethis::use_data(size_dist)
+usethis::use_data(tube_length_dist)
 
