@@ -23,7 +23,7 @@ A data frame with 5 rows and 10 variables:
 pollinator_visits
 }
 \description{
-A fictional dataseT of five different pollinator species and their proportional visit rates to 10 different flower species.
+A fictional dataset of five different pollinator species and their proportional visit rates to 10 different flower species.
 }
 \examples{
 pollinator_visits
