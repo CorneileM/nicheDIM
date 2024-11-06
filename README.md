@@ -30,8 +30,8 @@ devtools::install_github("CorneileM/nicheDIM")
 
 **nicheDIM** requires two data sets as input:
 
-1. **The resource utilisation data:** This dataframe should have rows (with row names) representing the different organisms, or resources users. The named columns of the resource utilisation dataframe represent the different resources and their proportional utilisation per user/organism.
-2. **The resource trait data:** These data should be in the form of a pair-wise distance matrix, where the rows and columns are the resources, and the values are the distances in trait space between the resources. The resource trait data can be any quantifiable trait that describes the resources, such as body size, chemical composition, or phylogenetic relatedness.
+1. **Resource utilisation data:** This dataframe should have rows (with row names) representing the different organisms, or resources users. The named columns of the resource utilisation dataframe represent the different resources and their proportional utilisation per user/organism.
+2. **Resource trait data:** These data should be in the form of a pair-wise distance matrix, where the rows and columns are the resources, and the values are the distances in trait space between the resources. The resource trait data can be any quantifiable trait that describes the resources, such as body size, chemical composition, or phylogenetic relatedness.
 
 Examples of the two data sets are included in the package and an example of how to calculate niche breadth using these data and the nicheDIM package is shown below:
 
