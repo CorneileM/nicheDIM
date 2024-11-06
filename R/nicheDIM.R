@@ -49,7 +49,7 @@ nicheDIM <- function(resource.use,  dist.matrix, dataset.name,  file.dir) {
     # PREPARE VALUES AND DATAFRAMES FOR NEXT LOOP
     # subset resource use table by row (i.e.,  resource use for user i)
     user_i.resource.use <- resource.use[i, ]
-    # set count values to proportion
+    # set count values to proportion [NOTE: step is only useful if resource.use is not already in proportion. Since paramater description states that resource.use should be in proportion, this step is redundant]
     user_i.resource.use <- as.matrix(user_i.resource.use)
     user_i.resource.use <- user_i.resource.use/sum(user_i.resource.use)
     user_i.resource.use <- as.data.frame(user_i.resource.use)
