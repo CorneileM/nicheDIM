@@ -5,7 +5,7 @@
 flowers <- c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J")
 
 # Pollinator species
-pollinators <- c("1", "2", "3", "4", "5")
+pollinators <- c("Bee1", "Bee2", "Bee3", "Fly1", "Fly2")
 
 # Resource use table
 pollinator_visits <- data.frame(matrix(c(0.1, 0.0, 0.0, 0.0, 0.0, 0.6, 0.3, 0.0, 0.0, 0.0,
@@ -19,40 +19,43 @@ colnames(pollinator_visits) <- flowers
 # FLOWER TRAITS
 # Color
 # First we'll create a dataframe representing mean color values (primary wavelengths measured in nm) for each flower species where the first column represents the flower species and the second column represents the mean color value.
-color <- data.frame(matrix(c("A", 710, "B", 550, "C", 600, "D", 650, "E", 610, "F", 750, "G", 780, "H", 510, "I", 670, "J", 580), nrow = 10, ncol = 2, byrow = TRUE))
-colnames(color) <- c("species", "color")
+flower_color <- data.frame(matrix(c("A", 710, "B", 550, "C", 600, "D", 650, "E", 610, "F", 750, "G", 780, "H", 510, "I", 670, "J", 580), nrow = 10, ncol = 2, byrow = TRUE))
+colnames(flower_color) <- c("species", "flower_color")
 
 # Next we'll convert the color values to a pairwise distance matrix with column and row names representing the flower species.
-color_dist <- as.matrix(dist(color$color))
+flower_color_dist_matrix <- as.matrix(dist(flower_color$flower_color))
 # Add rownames and colnames
-rownames(color_dist) <- color$species
-colnames(color_dist) <- color$species
+rownames(flower_color_dist_matrix) <- flower_color$species
+colnames(flower_color_dist_matrix) <- flower_color$species
 
 # Size
 # First we'll create a dataframe representing mean flower size values (corolla diameter in mm) for each flower species where the first column represents the flower species and the second column represents the mean size value.
-size <- data.frame(matrix(c("A", 22, "B", 12, "C", 27, "D", 25, "E", 8, "F", 31, "G", 7, "H", 18, "I", 9, "J", 13), nrow = 10, ncol = 2, byrow = TRUE))
-colnames(size) <- c("species", "size")
+flower_size <- data.frame(matrix(c("A", 22, "B", 12, "C", 27, "D", 25, "E", 8, "F", 31, "G", 7, "H", 18, "I", 9, "J", 13), nrow = 10, ncol = 2, byrow = TRUE))
+colnames(flower_size) <- c("species", "flower_size")
 
 # Next we'll convert the size values to a pairwise distance matrix with column and row names representing the flower species.
-size_dist <- as.matrix(dist(size$size))
+flower_size_dist_matrix <- as.matrix(dist(flower_size$flower_size))
 # Add rownames and colnames
-rownames(size_dist) <- size$species
-colnames(size_dist) <- size$species
+rownames(flower_size_dist_matrix) <- flower_size$species
+colnames(flower_size_dist_matrix) <- flower_size$species
 
 # Tube length
 # First we'll create a dataframe representing mean flower tube length values (corolla tube length in mm) for each flower species where the first column represents the flower species and the second column represents the mean tube length value.
-tube_length <- data.frame(matrix(c("A", 31, "B", 20, "C", 5, "D", 3, "E", 7, "F", 16, "G", 2, "H", 17, "I", 4, "J", 6), nrow = 10, ncol = 2, byrow = TRUE))
-colnames(tube_length) <- c("species", "tube_length")
+flower_tube_length <- data.frame(matrix(c("A", 31, "B", 20, "C", 5, "D", 3, "E", 7, "F", 16, "G", 2, "H", 17, "I", 4, "J", 6), nrow = 10, ncol = 2, byrow = TRUE))
+colnames(flower_tube_length) <- c("species", "flower_tube_length")
 
 # Next we'll convert the tube length values to a pairwise distance matrix with column and row names representing the flower species.
-tube_length_dist <- as.matrix(dist(tube_length$tube_length))
+flower_tube_length_dist_matrix <- as.matrix(dist(flower_tube_length$flower_tube_length))
 # Add rownames and colnames
-rownames(tube_length_dist) <- tube_length$species
-colnames(tube_length_dist) <- tube_length$species
+rownames(flower_tube_length_dist_matrix) <- flower_tube_length$species
+colnames(flower_tube_length_dist_matrix) <- flower_tube_length$species
 
 # Add prepared data to package
-usethis::use_data(pollinator_visits)
-usethis::use_data(color_dist)
-usethis::use_data(size_dist)
-usethis::use_data(tube_length_dist)
+usethis::use_data(pollinator_visits, overwrite = TRUE)
+usethis::use_data(flower_color, overwrite = TRUE)
+usethis::use_data(flower_size, overwrite = TRUE)
+usethis::use_data(flower_tube_length, overwrite = TRUE)
+usethis::use_data(flower_color_dist_matrix, overwrite = TRUE)
+usethis::use_data(flower_size_dist_matrix, overwrite = TRUE)
+usethis::use_data(flower_tube_length_dist_matrix, overwrite = TRUE)
 

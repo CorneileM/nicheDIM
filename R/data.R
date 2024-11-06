@@ -27,8 +27,8 @@
 #' \describe{
 #' }
 #' @examples
-#' size_dist
-"size_dist"
+#' flower_size_dist_matrix
+"flower_size_dist_matrix"
 
 #' Flower color pair-wise distance matrix
 #'
@@ -38,8 +38,8 @@
 #' \describe{
 #' }
 #' @examples
-#' color_dist
-"color_dist"
+#' flower_color_dist_matrix
+"flower_color_dist_matrix"
 
 #' Flower tube length pair-wise distance matrix
 #'
@@ -49,5 +49,5 @@
 #' \describe{
 #' }
 #' @examples
-#' tube_length_dist
-"tube_length_dist"
+#' flower_tube_length_dist_matrix
+"flower_tube_length_dist_matrix"
